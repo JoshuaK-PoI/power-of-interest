@@ -1,0 +1,39 @@
+---
+interface Props {
+  title: string;
+  color: string;
+}
+
+const { title, color } = Astro.props;
+---
+
+<div class="card" style={"border-color: " + color}>
+  <div class="card--header" style={"background-color: " + color}>
+    <h3>{title}</h3>
+    <slot name="subtitle" />
+  </div>
+  <div class="card--content">
+    <slot />
+  </div>
+</div>
+
+<style>
+  .card {
+    border: 2px solid;
+    border-radius: 4px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.125);
+    margin-bottom: 1rem;
+    position: relative;
+    display: flex;
+    flex-direction: row;
+  }
+
+  .card--header {
+    padding: 2rem;
+    max-width: 20rem;
+  }
+
+  .card--content {
+    padding: 1rem;
+  }
+</style>

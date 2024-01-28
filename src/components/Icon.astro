@@ -1,0 +1,14 @@
+---
+interface Props {
+  name: string;
+}
+
+const { name } = Astro.props;
+---
+
+<span
+  style="font-variation-settings: 'FILL': 1; margin-left: 1rem"
+  class="material-symbols-outlined"
+>
+  {name}
+</span>

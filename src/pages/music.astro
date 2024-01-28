@@ -1,0 +1,97 @@
+---
+import { Image } from "astro:assets";
+import Layout from "../layouts/Layout.astro";
+
+const music = [
+  {
+    name: "Continuum",
+    image: "/music/Power of Interest - Continuum.png",
+    image_width: 1080,
+    image_height: 1080,
+    type: "Single",
+    released: "Sep 2021",
+    url: "https://open.spotify.com/album/5u8DbakZgU443pb5ENjUCk?si=zzuJOE0qSWi-E2hXkW9F4A&dl_branch=1",
+  },
+  {
+    name: "If Everything's Right, Nothing's Left",
+    image: "/music/PoI 2020 album cover 400.png",
+    image_width: 1080,
+    image_height: 1080,
+    type: "Album",
+    released: "Jan 2021",
+    url: "https://open.spotify.com/album/4Sdh5vGcUfcMJp59HKNBQj?si=hfCwH9aLTimiJGoRzdznCQ&dl_branch=1",
+  },
+  {
+    name: "Solitary",
+    image: "/music/Power of Interest - Existentialism Solitary.png",
+    image_width: 1080,
+    image_height: 1080,
+    type: "Single",
+    released: "Nov 2020",
+    url: "https://open.spotify.com/album/4LxY4TMtF0rVZMCCtjuf8a?si=EUgVAAVTQzyHc9MJevV1wA&dl_branch=1",
+  },
+  {
+    name: "Existentialism",
+    image_width: 1080,
+    image_height: 1080,
+    image: "/music/Power of Interest - Existentialism.png",
+    type: "Single",
+    released: "Oct 2020",
+    url: "https://open.spotify.com/album/4QqukNtziZKKWuoXvXCMtt?si=xwJoclYzRsmtA-8wZ5nxFA&dl_branch=1",
+  },
+  {
+    name: "The Code",
+    image: "/music/Power of Interest - The Code (Album Cover).png",
+    image_width: 1080,
+    image_height: 1080,
+    type: "EP",
+    released: "Aug 2016",
+    url: "https://open.spotify.com/album/79w5HJ3pFfqgMfNVxev6CX?si=m0vnv9MwRgyhLXsHt_EmQA&dl_branch=1",
+  },
+];
+---
+
+<Layout title="Music | Power of Interest">
+  <main class="container">
+    <section class="panel panel--horizontal">
+      <div class="card gradient-blue">
+        <div class="">
+          <h2 class="light-blue">My Music</h2>
+          <p>
+            Expressing creativity through music is a big deal for me. Listen to
+            my latest releases here.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <div class="grid">
+      {
+        music.map((item) => (
+          <div class="card grid__item">
+            <div>
+              <Image
+                src={item.image}
+                height="256"
+                width={item.image_width}
+                alt={item.name}
+              />
+            </div>
+            <h2>{item.name}</h2>
+            <div class="flex">
+              <p>{item.released}</p>
+              <a
+                href={item.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                class="minimal light-purple"
+              >
+                Listen
+              </a>
+            </div>
+          </div>
+        ))
+      }
+    </div>
+  </main>
+</Layout>

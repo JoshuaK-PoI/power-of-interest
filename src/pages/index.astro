@@ -1,96 +1,73 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import Logo from "../components/Logo.astro";
+import Icon from "../components/Icon.astro";
 ---
 
 <Layout title="Power of Interest">
-  <main>
-    <h1><span class="text-gradient">Power of Interest</span></h1>
-    <h2>
-      <span class="text-gradient-2">Exploring the unfiltered creative mind</span
-      >
-    </h2>
-    <Logo />
+  <main class="container">
+    <section class="hero">
+      <h1>Power of Interest</h1>
+      <h3>Exploring the unfiltered creative mind</h3>
+      <Logo />
+    </section>
+
+    <section class="panel panel__music">
+      <div class="card--smaller card--smaller-left">
+        <h6>Latest releases</h6>
+      </div>
+      <div class="card gradient-blue">
+        <div class="">
+          <h2 class="light-blue">My Music</h2>
+          <p>
+            Expressing creativity through music is a big deal for me. Listen to
+            my latest releases here.
+          </p>
+        </div>
+        <a href="/music" class="button button--blue">
+          Discover
+          <Icon name="arrow_forward" />
+        </a>
+      </div>
+    </section>
+
+    <section class="panel panel__projects">
+      <div class="card gradient-poi-green">
+        <div class="">
+          <h2 class="light-green">My Projects</h2>
+          <p>
+            If I have an idea, I try to make it. Not all projects get to
+            completion, but the ones that do (or will be done) will be shown
+            here.
+          </p>
+        </div>
+        <a href="/projects" class="button button--green">
+          See all projects
+          <Icon name="arrow_forward" />
+        </a>
+      </div>
+      <div class="card--smaller card--smaller-right">
+        <h6>Recent projects</h6>
+      </div>
+    </section>
+
+    <section class="panel panel--horizontal">
+      <div class="card gradient-purple">
+        <div class="">
+          <h2 class="light-purple">Blog</h2>
+          <p>
+            I might not be all that great at writing, but through this medium I
+            can communicate my thoughts and ideas to the world in my own way.
+          </p>
+        </div>
+        <a href="/blog" class="button button--purple">
+          Read
+          <Icon name="arrow_forward" />
+        </a>
+      </div>
+      <div class="card--smaller card--smaller-right">
+        <h6>Latest Posts</h6>
+      </div>
+    </section>
   </main>
 </Layout>
-
-<style>
-  main {
-    margin: 0;
-    padding: 0;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    min-height: 100vh;
-    text-align: center;
-    color: white;
-  }
-  .astro-a {
-    position: absolute;
-    top: -32px;
-    left: 50%;
-    transform: translatex(-50%);
-    width: 220px;
-    height: auto;
-    z-index: -1;
-  }
-  h1 {
-    font-size: 4rem;
-    font-weight: 600;
-    letter-spacing: 0.05ch;
-    line-height: 1;
-    text-align: center;
-    margin: 0;
-    margin-bottom: 2rem;
-  }
-  .text-gradient {
-    background-image: var(--accent-gradient);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-size: 400%;
-    background-position: 0%;
-  }
-  h2 {
-    font-size: 1.8rem;
-    font-weight: 400;
-    letter-spacing: 0.09ch;
-    line-height: 1;
-    text-align: center;
-    margin: 0;
-  }
-  .text-gradient-2 {
-    background-image: var(--accent-gradient-2);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-size: 400%;
-    background-position: 0%;
-  }
-  .instructions {
-    margin-bottom: 2rem;
-    border: 1px solid rgba(var(--accent-light), 25%);
-    background: linear-gradient(
-      rgba(var(--accent-dark), 66%),
-      rgba(var(--accent-dark), 33%)
-    );
-    padding: 1.5rem;
-    border-radius: 8px;
-  }
-  .instructions code {
-    font-size: 0.8em;
-    font-weight: bold;
-    background: rgba(var(--accent-light), 12%);
-    color: rgb(var(--accent-light));
-    border-radius: 4px;
-    padding: 0.3em 0.4em;
-  }
-  .instructions strong {
-    color: rgb(var(--accent-light));
-  }
-  .link-card-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(24ch, 1fr));
-    gap: 2rem;
-    padding: 0;
-  }
-</style>

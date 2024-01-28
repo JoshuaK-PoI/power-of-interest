@@ -1,0 +1,147 @@
+@use "sass:color";
+
+@import "variables";
+
+@mixin panel-horizontal {
+  flex-direction: column;
+  height: unset;
+  max-height: unset;
+  .card {
+    width: 100%;
+    flex-direction: row;
+    align-items: center;
+  }
+  .card--smaller {
+    width: 90%;
+    height: unset;
+    margin-top: -2rem;
+    padding-top: 5rem;
+  }
+}
+
+.panel {
+  display: flex;
+  height: 42rem;
+  align-items: center;
+  &:not(.panel__projects) {
+    margin: 5rem 0;
+  }
+  &.panel__projects {
+    margin-bottom: 5rem;
+  }
+
+  &.panel--horizontal {
+    @include panel-horizontal();
+  }
+}
+
+.card,
+.card--smaller {
+  border-radius: 24px;
+  padding: 3rem 1rem;
+  background-color: var(--bg-dark);
+}
+
+.card {
+  flex: 0 0 40%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+  box-shadow: 0 0 18px rgba(255, 255, 255, 0.1);
+  z-index: 2;
+  position: relative;
+  h2 {
+    color: var(--color-white);
+    font-weight: 700;
+    font-size: 2rem;
+    letter-spacing: 0.03rem;
+    margin: 1rem 0.5rem;
+  }
+  p {
+    color: var(--color-white);
+    line-height: 2rem;
+    margin: 3rem 0.5rem;
+  }
+  a {
+    text-decoration: none;
+  }
+}
+
+.grid {
+  display: flex;
+  width: 100%;
+  flex-wrap: wrap;
+  justify-content: center;
+  &__item {
+    margin: 1rem;
+    flex: 0 0 256px;
+    width: 256px;
+    padding: 0;
+    overflow: hidden;
+    min-height: 400px;
+    img {
+      max-width: 256px;
+      object-fit: contain;
+    }
+    h2 {
+      margin: 1rem 0.5rem 0 1rem;
+      font-size: 1.4rem;
+      letter-spacing: 0.02rem;
+    }
+    .flex {
+      align-items: center;
+      justify-content: space-between;
+      padding: 1rem;
+      p {
+        margin: 0;
+      }
+      a {
+        text-transform: uppercase;
+        letter-spacing: 0.07em;
+        padding: 0.25rem 0.5rem;
+        border-radius: 0.25rem;
+        border: 1px solid color.adjust($color-light-purple, $alpha: -0.6);
+        &:hover {
+          background-color: color.adjust($color-light-purple, $alpha: -0.8);
+        }
+      }
+    }
+  }
+}
+
+.card--smaller {
+  flex: 0 1 60%;
+  height: 90%;
+  box-shadow: 1px 4px 12px rgba(255, 255, 255, 0.1);
+  z-index: 1;
+  h6 {
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: var(--color-grey);
+    letter-spacing: 0.07rem;
+  }
+}
+
+.card--smaller-right {
+  margin-left: -1.5rem;
+  padding-left: 3.5rem;
+}
+
+.card--smaller-left {
+  margin-right: -1.5rem;
+  padding-right: 3.5rem;
+  .list-item {
+    flex-direction: row-reverse;
+    text-align: right;
+  }
+}
+
+@media (max-width: 1000px) {
+  .panel {
+    @include panel-horizontal();
+    &.panel__music {
+      flex-direction: column-reverse;
+    }
+  }
+}
