@@ -1,30 +1,8 @@
-@import "variables";
-
-:root {
-  --color-primary: rgb(46, 200, 102);
-  --color-primary-faded: rgba(46, 200, 102, 0.2);
-  --color-primary-light: rgb(169, 245, 196);
-  --color-primary-dark: rgb(14, 118, 51);
-  --color-black: rgb(21, 22, 22);
-  --color-white: rgb(255, 255, 255);
-  --color-grey: rgb(133, 133, 133);
-  --color-grey-light: rgb(230, 230, 230);
-  --color-translucent-white: rgba(255, 255, 255, 0.95);
-
-  --color-light-blue: rgb(225, 238, 250);
-  --color-dark-blue: rgb(14, 46, 118);
-
-  --color-light-purple: $color-light-purple;
-  --color-dark-purple: $color-dark-purple;
-
-  --bg-dark: 19, 21, 26;
-}
 
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: "Open Sans", sans-serif;
 }
 
 a {

@@ -1,6 +1,7 @@
 @use "sass:color";
+@use "sass:map";
 
-@import "variables";
+@import "colors";
 
 @mixin panel-horizontal {
   flex-direction: column;
@@ -44,25 +45,15 @@
 }
 
 .card {
-  flex: 0 0 40%;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  height: 100%;
-  box-shadow: 0 0 18px rgba(255, 255, 255, 0.1);
-  z-index: 2;
-  position: relative;
   h2 {
-    color: var(--color-white);
     font-weight: 700;
-    font-size: 2rem;
     letter-spacing: 0.03rem;
-    margin: 1rem 0.5rem;
   }
   p {
-    color: var(--color-white);
     line-height: 2rem;
-    margin: 3rem 0.5rem;
   }
   a {
     text-decoration: none;
@@ -70,10 +61,11 @@
 }
 
 .grid {
-  display: flex;
-  width: 100%;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(256px, 1fr));
+  gap: 1rem;
   justify-content: center;
+  justify-items: center;
   &__item {
     margin: 1rem;
     flex: 0 0 256px;
@@ -102,9 +94,9 @@
         letter-spacing: 0.07em;
         padding: 0.25rem 0.5rem;
         border-radius: 0.25rem;
-        border: 1px solid color.adjust($color-light-purple, $alpha: -0.6);
+        border: 1px solid color.adjust(map.get($colors, 'purple', 'light'), $alpha: -0.6);
         &:hover {
-          background-color: color.adjust($color-light-purple, $alpha: -0.8);
+          background-color: color.adjust(map.get($colors, 'purple', 'light'), $alpha: -0.8);
         }
       }
     }
@@ -119,7 +111,7 @@
   h6 {
     font-size: 0.8rem;
     font-weight: 600;
-    color: var(--color-grey);
+    color: var(--color-grey-standard);
     letter-spacing: 0.07rem;
   }
 }

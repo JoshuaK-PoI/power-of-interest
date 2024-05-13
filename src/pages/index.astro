@@ -4,41 +4,41 @@ import Logo from "../components/Logo.astro";
 import Icon from "../components/Icon.astro";
 ---
 
-<Layout title="Power of Interest">
-  <main class="container">
-    <section class="hero">
-      <h1>Power of Interest</h1>
-      <h3>Exploring the unfiltered creative mind</h3>
+<Layout title="Home">
+  <main class="p-block-start-40">
+    <section class="m-block-start-30 m-inline-30 flex-column align-items-center">
+      <h1 class="font-size-50 color-primary text-align-center">Power of Interest</h1>
+      <h2 class="font-size-20 color-primary-dark text-align-center">Exploring the unfiltered creative mind</h2>
       <Logo />
     </section>
 
-    <section class="panel panel__music">
-      <div class="card gradient-blue">
-        <div class="">
-          <h2 class="light-blue">My Music</h2>
-          <p>
+    <section class="panel panel__music p-inline-30">
+      <div class="card gradient-blue shadow">
+        <section>
+          <h2 class="color-blue-light font-size-20">My Music</h2>
+          <p class="color-blue-light m-block-start-30">
             Expressing creativity through music is a big deal for me. Listen to
             my latest releases here.
           </p>
-        </div>
-        <a href="/music" class="button button--blue">
+        </section>
+        <a href="/music" class="button border border-blue-dark background-blue-light color-blue-dark">
           Discover
           <Icon name="arrow_forward" />
         </a>
       </div>
     </section>
 
-    <section class="panel panel__projects">
-      <div class="card gradient-poi-green">
-        <div class="">
-          <h2 class="light-green">My Projects</h2>
-          <p>
+    <section class="panel panel__projects p-inline-30">
+      <div class="card gradient-green">
+        <section>
+          <h2 class="color-green-light">My Projects</h2>
+          <p class="color-green-light p-block-start-30">
             If I have an idea, I try to make it. Not all projects get to
             completion, but the ones that do (or will be done) will be shown
             here.
           </p>
-        </div>
-        <a href="/projects" class="button button--green">
+        </section>
+        <a href="/projects" class="button border border-green-dark background-green-light color-green-dark">
           See all projects
           <Icon name="arrow_forward" />
         </a>

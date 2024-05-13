@@ -21,61 +21,16 @@ const { title } = Astro.props;
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&display=swap"
-      rel="stylesheet"
-    />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined"
-      rel="stylesheet"
-    />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&family=Source+Sans+3:ital,wght@0,200..900;1,200..900&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&family=Source+Sans+3:ital,wght@0,200..900;1,200..900&family=Material+Symbols+Outlined&display=swap"
       rel="stylesheet"
     />
     <Styles />
-    <title>{title}</title>
+    <title>{title} - Power of Interest</title>
   </head>
   <body>
     <header>
       <Navbar />
     </header>
     <slot />
-    <style is:global>
-      :root {
-        --bg-dark: 19, 21, 26;
-        --accent: #2ec866;
-        --accent-light: #78c493;
-        --accent-dark: #0b7c42;
-        --accent-very-dark: #0f6137;
-        --accent-gradient: linear-gradient(
-          45deg,
-          var(--accent),
-          var(--accent-light) 30%,
-          white 60%
-        );
-
-        --accent-gradient-2: linear-gradient(
-          45deg,
-          var(--accent-very-dark),
-          var(--accent-dark) 30%
-        );
-      }
-      html {
-        font-family: "Open Sans", system-ui, sans-serif;
-        background: rgb(var(--bg-dark));
-        background-size: 224px;
-      }
-      code {
-        font-family:
-          Menlo,
-          Monaco,
-          Lucida Console,
-          Liberation Mono,
-          DejaVu Sans Mono,
-          Bitstream Vera Sans Mono,
-          Courier New,
-          monospace;
-      }
-    </style>
   </body>
 </html>

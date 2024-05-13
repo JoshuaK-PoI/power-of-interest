@@ -51,24 +51,24 @@ const music = [
 ];
 ---
 
-<Layout title="Music | Power of Interest">
-  <main class="container">
-    <section class="panel panel--horizontal">
-      <div class="card gradient-blue">
-        <div class="">
-          <h2 class="light-blue">My Music</h2>
-          <p>
+<Layout title="Music">
+  <main class="p-block-start-40">
+    <section class="panel panel--horizontal p-inline-30">
+      <div class="card gradient-blue shadow">
+        <section>
+          <h2 class="color-blue-light">My Music</h2>
+          <p class="color-blue-light">
             Expressing creativity through music is a big deal for me. Listen to
             my latest releases here.
           </p>
-        </div>
+        </section>
       </div>
     </section>
 
-    <div class="grid">
+    <div class="grid p-inline-30">
       {
         music.map((item) => (
-          <div class="card grid__item">
+          <div class="card grid__item shadow">
             <div>
               <Image
                 src={item.image}
@@ -77,14 +77,14 @@ const music = [
                 alt={item.name}
               />
             </div>
-            <h2>{item.name}</h2>
+            <h2 class="color-text">{item.name}</h2>
             <div class="flex">
-              <p>{item.released}</p>
+              <p class="color-text">{item.released}</p>
               <a
                 href={item.url}
                 target="_blank"
                 rel="noopener noreferrer"
-                class="minimal light-purple"
+                class="minimal color-text-purple"
               >
                 Listen
               </a>

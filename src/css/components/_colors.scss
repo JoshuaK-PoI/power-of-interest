@@ -1,62 +1,141 @@
-@import "variables";
+@use "sass:map";
 
-.dark-green {
-  color: var(--color-primary-dark);
+$colors: (
+  "black": (
+    "standard": rgb(19, 21, 26),
+  ),
+  "white": (
+    "standard": rgb(255, 255, 255),
+    "translucent": rgba(255, 255, 255, 0.95),
+  ),
+  "grey": (
+    "standard": rgb(133, 133, 133),
+    "light": rgb(230, 230, 230),
+  ),
+  "purple": (
+    "dark": rgb(78, 49, 230),
+    "standard": rgb(116, 66, 197),
+    "light": rgb(189, 166, 224),
+  ),
+  "blue": (
+    "dark": rgb(14, 46, 118),
+    "standard": rgb(30, 86, 158),
+    "light": rgb(225, 238, 250),
+  ),
+  "green": (
+    "dark": rgb(14, 118, 51),
+    "standard": rgb(46, 200, 102),
+    "light": rgb(169, 245, 196),
+    "faded": rgba(46, 200, 102, 0.2),
+  ),
+);
+
+$dark: (
+  "background": map.get($colors, "black", "standard"),
+  "text": map.get($colors, "white", "standard"),
+  "primary": map.get($colors, "green", "standard"),
+  "primary-light": map.get($colors, "green", "dark"),
+  "primary-dark": map.get($colors, "green", "light"),
+  "text-purple": map.get($colors, "purple", "light"),
+  "text-blue": map.get($colors, "blue", "light"),
+  "translucent": rgba(0, 0, 0, 0.8),
+  "shadow": rgba(255, 255, 255, 0.1),
+);
+
+$light: (
+  "background": map.get($colors, "white", "standard"),
+  "text": map.get($colors, "black", "standard"),
+  "primary": map.get($colors, "green", "standard"),
+  "primary-light": map.get($colors, "green", "light"),
+  "primary-dark": map.get($colors, "green", "dark"),
+  "text-purple": map.get($colors, "purple", "dark"),
+  "text-blue": map.get($colors, "blue", "dark"),
+  "translucent": rgba(255, 255, 255, 0.95),
+  "shadow": rgba(0, 0, 0, 0.1),
+);
+
+@media (prefers-color-scheme: dark) {
+  @each $key, $value in $dark {
+    :root {
+      --color-#{$key}: #{$value};
+    }
+  }
 }
 
-.dark-blue {
-  color: var(--color-dark-blue);
+@media (prefers-color-scheme: light) {
+  @each $key, $value in $light {
+    :root {
+      --color-#{$key}: #{$value};
+    }
+  }
 }
 
-.light-blue {
-  color: var(--color-light-blue);
+@each $key, $value in $colors {
+  @each $subkey, $subvalue in $value {
+    :root {
+      --color-#{$key}-#{$subkey}: #{$subvalue};
+    }
+  }
 }
 
-.light-green {
-  color: var(--color-primary-light);
+@each $key, $value in $colors {
+  @each $subkey, $subvalue in $value {
+    .color-#{$key}-#{$subkey} {
+      color: var(--color-#{$key}-#{$subkey});
+    }
+
+    .background-#{$key}-#{$subkey} {
+      background-color: var(--color-#{$key}-#{$subkey});
+    }
+
+    .border-#{$key}-#{$subkey} {
+      border-color: var(--color-#{$key}-#{$subkey});
+    }
+  }
 }
 
-.light-purple {
-  color: $color-light-purple;
+@each $key in map.keys($dark) {
+  .color-#{$key} {
+    color: var(--color-#{$key});
+  }
 }
 
 .button--green {
-  background-color: var(--color-primary-dark);
-  color: var(--color-white);
   border: 1px solid var(--color-primary-light);
 }
 
 .button--blue {
-  background-color: var(--color-dark-blue);
-  color: var(--color-light-blue);
-  border: 1px solid var(--color-light-blue);
+  border: 1px solid var(--color-blue-light);
 }
 
 .button--purple {
-  background-color: $color-dark-purple;
-  color: $color-light-purple;
+  background-color: var(--color-purple-dark);
+  color: var(--color-purple-light);
 }
 
-.gradient-poi-green {
+.gradient-green {
   background-image: linear-gradient(
-    var(--color-primary-dark),
+    var(--color-green-dark),
     var(--color-primary)
   );
   border: 1px solid var(--color-primary);
 }
 
 .gradient-blue {
-  background-image: linear-gradient(#04213f, #1e569e);
-  border: 1px solid #1e569e;
+  background-image: linear-gradient(
+    var(--color-blue-dark),
+    var(--color-blue-standard)
+  );
+  border: 1px solid var(--color-blue-standard);
 }
 
 .gradient-purple {
   background-image: linear-gradient(
     to right,
-    $color-dark-purple,
-    #7442c5,
-    #9351dd
+    var(--color-purple-dark),
+    var(--color-purple-standard),
+    var(--color-purple-light)
   );
 
-  border: 1px solid #9351dd;
+  border: 1px solid var(--color-purple-standard);
 }

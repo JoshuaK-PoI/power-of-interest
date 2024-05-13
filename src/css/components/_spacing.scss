@@ -1,0 +1,41 @@
+@use 'sass:math';
+
+$map: (
+    'block',
+    'inline',
+    'block-start',
+    'block-end',
+    'inline-start',
+    'inline-end',
+);
+
+$spacings: (
+    1,
+    2,
+    4,
+    6,
+    8,
+    10,
+    15,
+    20,
+    25,
+    30,
+    40,
+    50,
+);
+
+@each $i in $spacings {
+    @each $key in $map {
+        .p-#{$key}-#{$i} {
+            padding-#{$key}: math.div($i, 10) * 1rem;
+        }
+
+        .m-#{$key}-#{$i} {
+            margin-#{$key}: math.div($i, 10) * 1rem;
+        }
+
+        .font-size-#{$i} {
+            font-size: math.div($i, 10) * 1rem;
+        }
+    }
+}

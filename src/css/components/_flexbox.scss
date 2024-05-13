@@ -1,0 +1,36 @@
+
+$aligns: (
+    'start',
+    'end',
+    'center',
+    'between',
+    'around',
+    'evenly',
+    'stretch',
+    'flex-start',
+    'flex-end',
+);
+
+$directions: (
+    'row',
+    'row-reverse',
+    'column',
+    'column-reverse',
+);
+
+@each $direction in $directions {
+    .flex-#{$direction} {
+        display: flex;
+        flex-direction: #{$direction};
+    }
+}
+
+@each $align in $aligns {
+    .align-items-#{$align} {
+        align-items: #{$align};
+    }
+
+    .justify-content-#{$align} {
+        justify-content: #{$align};
+    }
+}
