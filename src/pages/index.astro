@@ -5,44 +5,53 @@ import Icon from "../components/Icon.astro";
 ---
 
 <Layout title="Home">
-  <main class="p-block-start-40">
-    <section class="m-block-start-30 m-inline-30 flex-column align-items-center">
-      <h1 class="font-size-50 color-primary text-align-center">Power of Interest</h1>
-      <h2 class="font-size-20 color-primary-dark text-align-center">Exploring the unfiltered creative mind</h2>
-      <Logo />
-    </section>
+  <section class="m-inline-30 flex-column align-items-center">
+    <h1 class="font-size-50 color-primary text-align-center">
+      Power of Interest
+    </h1>
+    <h2 class="font-size-20 color-primary-dark text-align-center">
+      Exploring the unfiltered creative mind
+    </h2>
+    <Logo />
+  </section>
 
-    <section class="panel panel__music p-inline-30">
-      <div class="card gradient-blue shadow">
-        <section>
-          <h2 class="color-blue-light font-size-20">My Music</h2>
-          <p class="color-blue-light m-block-start-30">
-            Expressing creativity through music is a big deal for me. Listen to
-            my latest releases here.
-          </p>
-        </section>
-        <a href="/music" class="button border border-blue-dark background-blue-light color-blue-dark">
-          Discover
-          <Icon name="arrow_forward" />
-        </a>
-      </div>
-    </section>
+  <section class="panel p-inline-30 p-block-40">
+    <div
+      class="card gradient-blue flex-row justify-content-space-between shadow"
+    >
+      <section>
+        <h2 class="color-blue-light font-size-20">My Music</h2>
+        <p class="color-blue-light m-block-30">
+          Expressing creativity through music is a big deal for me. Listen to my
+          latest releases here.
+        </p>
+      </section>
+      <a
+        href="/music"
+        class="button border border-blue-dark background-blue-light color-blue-dark"
+      >
+        Discover
+        <Icon name="arrow_forward" />
+      </a>
+    </div>
+  </section>
 
-    <section class="panel panel__projects p-inline-30">
-      <div class="card gradient-green">
-        <section>
-          <h2 class="color-green-light">My Projects</h2>
-          <p class="color-green-light p-block-start-30">
-            If I have an idea, I try to make it. Not all projects get to
-            completion, but the ones that do (or will be done) will be shown
-            here.
-          </p>
-        </section>
-        <a href="/projects" class="button border border-green-dark background-green-light color-green-dark">
-          See all projects
-          <Icon name="arrow_forward" />
-        </a>
-      </div>
-    </section>
-  </main>
+  <section class="panel p-inline-30 p-block-40">
+    <div class="card gradient-green justify-content-space-between shadow">
+      <section>
+        <h2 class="color-green-light font-size-20">My Projects</h2>
+        <p class="color-green-light p-block-30">
+          If I have an idea, I try to make it. Not all projects get to
+          completion, but the ones that do (or will be done) will be shown here.
+        </p>
+      </section>
+      <a
+        href="/projects"
+        class="button border border-green-dark background-green-light color-green-dark"
+      >
+        See all projects
+        <Icon name="arrow_forward" />
+      </a>
+    </div>
+  </section>
 </Layout>

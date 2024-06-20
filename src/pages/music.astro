@@ -52,46 +52,42 @@ const music = [
 ---
 
 <Layout title="Music">
-  <main class="p-block-start-40">
-    <section class="panel panel--horizontal p-inline-30">
-      <div class="card gradient-blue shadow">
-        <section>
-          <h2 class="color-blue-light">My Music</h2>
-          <p class="color-blue-light">
-            Expressing creativity through music is a big deal for me. Listen to
-            my latest releases here.
-          </p>
-        </section>
-      </div>
-    </section>
-
-    <div class="grid p-inline-30">
-      {
-        music.map((item) => (
-          <div class="card grid__item shadow">
-            <div>
-              <Image
-                src={item.image}
-                height="256"
-                width={item.image_width}
-                alt={item.name}
-              />
-            </div>
-            <h2 class="color-text">{item.name}</h2>
-            <div class="flex">
-              <p class="color-text">{item.released}</p>
-              <a
-                href={item.url}
-                target="_blank"
-                rel="noopener noreferrer"
-                class="minimal color-text-purple"
-              >
-                Listen
-              </a>
-            </div>
-          </div>
-        ))
-      }
+  <section class="panel panel--horizontal p-inline-30 m-block-30">
+    <div class="card gradient-blue shadow">
+      <section>
+        <h2 class="color-blue-light">My Music</h2>
+        <p class="color-blue-light">
+          Expressing creativity through music is a big deal for me. Listen to my
+          latest releases here.
+        </p>
+      </section>
     </div>
-  </main>
+  </section>
+
+  <div class="grid p-inline-30">
+    {
+      music.map((item) => (
+        <a
+          href={item.url}
+          target="_blank"
+          rel="noopener noreferrer"
+          class="card grid__item flex-column align-items-flex-start shadow text-decoration-none"
+        >
+            <Image
+              src={item.image}
+              height="256"
+              width={item.image_width}
+              alt={item.name}
+            />
+            <div class="w-full h-full p-inline-10 p-block-10 flex-column justify-content-space-between">
+              <h2 class="color-text">{item.name}</h2>
+              <div class="w-full p-block-start-10 flex-row justify-content-space-between align-items-center">
+                <p class="card-text-accent">{item.released}</p>
+                <p class="card-text-accent">{item.type}</p>
+              </div>
+            </div>
+        </a>
+      ))
+    }
+  </div>
 </Layout>

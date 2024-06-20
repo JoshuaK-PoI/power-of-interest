@@ -3,31 +3,28 @@ import Layout from "../layouts/Layout.astro";
 ---
 
 <Layout title="Projects">
-  <main class="m-block-start-40">
-    <section class="panel panel--horizontal p-inline-30">
-      <div class="card gradient-green">
-        <div class="">
-          <h2 class="color-green-light">My Projects</h2>
-          <p class="color-green-light">
-            If I have an idea, I try to make it. Not all projects get to
-            completion, but the ones that do (or will be done) will be shown
-            here.
-          </p>
-        </div>
-      </div>
-    </section>
-
-    <div class="grid m-inline-30">
-      <div class="card shadow">
-        <h3 class="color-text-blue font-size-15">This Website</h3>
-        <p class="color-text-blue m-block-start-10">
-          I wanted to make a website that was fast, easy to maintain, and
-          accessible. I also wanted to learn a new framework, so I chose <a
-            href="https://astro.build"
-            target="_new">Astro</a
-          >. I'm still learning, but I'm happy with the results so far.
+  <section class="panel panel--horizontal p-inline-30 m-block-30">
+    <div class="card gradient-green">
+      <div class="">
+        <h2 class="color-green-light">My Projects</h2>
+        <p class="color-green-light">
+          If I have an idea, I try to make it. Not all projects get to
+          completion, but the ones that do (or will be done) will be shown here.
         </p>
       </div>
     </div>
-  </main>
+  </section>
+
+  <div class="grid m-inline-30">
+    <div class="card flex-column shadow">
+      <h3 class="color-text-blue font-size-15">This Website</h3>
+      <p class="color-text-blue m-block-start-10">
+        I wanted to make a website that was fast, easy to maintain, and
+        accessible. I also wanted to learn a new framework, so I chose <a
+          href="https://astro.build"
+          target="_new">Astro</a
+        >. I'm still learning, but I'm happy with the results so far.
+      </p>
+    </div>
+  </div>
 </Layout>

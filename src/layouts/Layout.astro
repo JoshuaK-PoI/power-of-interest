@@ -31,6 +31,10 @@ const { title } = Astro.props;
     <header>
       <Navbar />
     </header>
-    <slot />
+    <main class="p-block-40">
+      <div class="container">
+        <slot />
+      </div>
+    </main>
   </body>
 </html>

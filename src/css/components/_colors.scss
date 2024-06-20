@@ -25,7 +25,7 @@ $colors: (
   "green": (
     "dark": rgb(14, 118, 51),
     "standard": rgb(46, 200, 102),
-    "light": rgb(169, 245, 196),
+    "light": rgb(203, 240, 216),
     "faded": rgba(46, 200, 102, 0.2),
   ),
 );
@@ -33,6 +33,7 @@ $colors: (
 $dark: (
   "background": map.get($colors, "black", "standard"),
   "text": map.get($colors, "white", "standard"),
+  "nav-link": map.get($colors, "green", "light"),
   "primary": map.get($colors, "green", "standard"),
   "primary-light": map.get($colors, "green", "dark"),
   "primary-dark": map.get($colors, "green", "light"),
@@ -45,12 +46,13 @@ $dark: (
 $light: (
   "background": map.get($colors, "white", "standard"),
   "text": map.get($colors, "black", "standard"),
+  "nav-link": map.get($colors, "black", "standard"),
   "primary": map.get($colors, "green", "standard"),
   "primary-light": map.get($colors, "green", "light"),
   "primary-dark": map.get($colors, "green", "dark"),
   "text-purple": map.get($colors, "purple", "dark"),
   "text-blue": map.get($colors, "blue", "dark"),
-  "translucent": rgba(255, 255, 255, 0.95),
+  "translucent": rgba(255, 255, 255, 0.8),
   "shadow": rgba(0, 0, 0, 0.1),
 );
 

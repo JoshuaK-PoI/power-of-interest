@@ -39,3 +39,27 @@ $spacings: (
         }
     }
 }
+
+.w {
+    @each $i in $spacings {
+        &-#{$i} {
+            width: math.div($i, 10) * 100%;
+        }
+    }
+
+    &-full {
+        width: 100%;
+    }
+}
+
+.h {
+    @each $i in $spacings {
+        &-#{$i} {
+            height: math.div($i, 10) * 100%;
+        }
+    }
+
+    &-full {
+        height: 100%;
+    }
+}
